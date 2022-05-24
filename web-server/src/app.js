@@ -7,7 +7,7 @@ app.get('', (req, res) => {
 })
 
 app.get('/about', (req, res) => {
-  res.send('About')
+  res.send('<h1>About</h1>')
 })
 
 app.get('/help', (req, res) => {
@@ -15,7 +15,10 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
-  res.send('Your weather')
+  res.send({
+    forecast: "Good",
+    location: "Washington, DC"
+  })
 })
 
 app.listen(3000, () => {
