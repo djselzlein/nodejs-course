@@ -34,8 +34,8 @@ app.get('/about', (req, res) => {
 app.get('/help', (req, res) => {
   res.render('help', {
     title: 'Help',
-    message: 'This is where you can find help.',
-    name: 'Djeison'
+    name: 'Djeison',
+    message: 'This is where you can find help.'
   })
 })
 
@@ -43,6 +43,22 @@ app.get('/weather', (req, res) => {
   res.send({
     forecast: "Good",
     location: "Washington, DC"
+  })
+})
+
+app.get('/help/*', (req, res) => {
+  res.render('404', {
+    title: '404',
+    name: 'Djeison',
+    message: 'Help article not found'
+  })
+})
+
+app.get('*', (req, res) => {
+  res.render('404', {
+    title: '404',
+    name: 'Djeison',
+    message: 'Page not found'
   })
 })
 
